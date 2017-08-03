@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja">
+<head>
+<style type="text/css">  
+div{
+	float: left;
+	display: block;
+	padding-left: 10px; 
+}
+p{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background-color: black;
+}
+div{
+	background-color: red;
+}
+</style> 
+<meta http-equiv="Refresh" content="">
+</head>
+<body>
+<script language='javascript' src='//ds.testadp.com/adpds_deliver/js/pjs.js'></script>
+<script language='javascript'>
+var adpds_tags = new Array();
+var adpds_idx = new Array();
+var adpds_param = new Array();
+var adpds_frame_values = "waku_147284,waku_147319";
+adpds_js('//ds.testadp.com/adpds_deliver','adpds_frames='+adpds_frame_values+'&adpds_site=hc-ashida&sync_type=campaign&sync_comp=ne&log_output=0&grp_idx=0');
+function adpds_show(key, grp_idx){
+    if(adpds_idx[grp_idx]==undefined || adpds_tags[grp_idx]==undefined || adpds_tags[grp_idx][key]==undefined || adpds_param[grp_idx]==undefined || adpds_param[grp_idx][key]==undefined) return;
+    if(adpds_idx[grp_idx][key]==undefined) adpds_idx[grp_idx][key] = 0;
+    if(adpds_tags[grp_idx][key][adpds_idx[grp_idx][key]]==undefined) return;
+    if(adpds_param[grp_idx][key][adpds_idx[grp_idx][key]]==undefined) return;
+    var tag = adpds_tags[grp_idx][key][adpds_idx[grp_idx][key]];
+    document.write(tag);
+    var params = adpds_param[grp_idx][key][adpds_idx[grp_idx][key]].split(",");
+    adpds_js2('//ds.testadp.com/adpds_deliver','adpds_frames='+key+'&adpds_site=hc-ashida&sync_type=campaign&sync_comp=ne&log_output=1&grp_idx='+grp_idx+'&adpds_sid='+params[0]+'&adpds_cpn='+params[1]+'&adpds_bid='+params[2]+'&adpds_cid='+params[3]+'&adpds_lid='+params[4]);
+    adpds_idx[grp_idx][key]++;
+}
+</script>
+<div>
+<h1>連動制御　新タグ</h1>
+<h2>No.2</h2>
+<p>枠</p>
+<div><script language='javascript' type='text/javascript'>adpds_show('waku_147284', 0);</script></div>
+<div><script language='javascript' type='text/javascript'>adpds_show('waku_147319', 0);</script></div>
+</div>
+</body>
+</html>
+
